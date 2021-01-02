@@ -6,10 +6,11 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const authRoutes = require("./api/routes/authRoutes");
 const blogRoutes = require("./api/routes/blogRoutes");
+require("dotenv").config();
 
 
 
-mongoose.connect("mongodb://localhost/Blogs",{useCreateIndex:true,useNewUrlParser: true,useUnifiedTopology: true})
+mongoose.connect(process.env.DBURL,{useCreateIndex:true,useNewUrlParser: true,useUnifiedTopology: true})
 .then(()=>{
     console.log("database connected!!")
 })
