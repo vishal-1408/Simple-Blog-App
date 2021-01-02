@@ -1,3 +1,8 @@
+const Blog = require("./../models/Blog");
+const upload = require("../config/multer").single("image");
+const s3 = require("../config/aws");
+
+
 const newBlog = async(req,res)=>{
     try{
        let obj = {

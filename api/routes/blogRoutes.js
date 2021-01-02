@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Blog = require("./../models/Blog");
-const upload = require("../config/multer").single("image");
-const s3 = require("../config/aws");
-const auth  = require("../middlewares/authenticate")
+const auth  = require("../middlewares/authenticate");
 const blogController = require("../controllers/blogControllers")
+const upload = require("../config/multer").single("image");
 
 router.use(auth);
 
